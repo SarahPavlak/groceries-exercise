@@ -48,15 +48,29 @@ for p in sorted_products:
 departments = []
 for p in products:
     #print(p["department"])
-    #departments.append(p["department"])
-    if p["department"] not in departments:
-         departments.append(p["department"])
+    departments.append(p["department"])
+    #if p["department"] not in departments:
+         #departments.append(p["department"])
 
-departments_count = len(departments)
+unique_departments = list(set(departments))
+
+departments_count = len(unique_departments)
 
 print("----------")
 print("There are " +  str(departments_count) + " Departments:")
 print("-----------")
 
-for d in departments:
-    print(d)
+unique_departments.sort()
+
+for d in unique_departments:
+    print(d.title())
+
+#def sort_by_name(any_product):
+#    return any_product ["name"]
+#sorted_products = sorted(products,key=sort_by_name)
+
+
+#for p in sorted_products:
+    #price_usd = p["price"]
+    #price_usd = "${0: .2f}".format(p["price"])
+    #print("+ " + p["name"] + " (" + str (price_usd) + ")") 
