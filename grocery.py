@@ -26,14 +26,18 @@ products = [
 print(products)
 
 # TODO: write some Python code here to produce the desired output
-print(len(products))
+products_count = len(products)
 
-# print((products[0]["name"]))
+print("----------")
+print("There are " +  str(products_count) + " Products:")
+print("-----------")
 
-def product_name(any_product):
-    return any_product["name"]
+def sort_by_name(any_product):
+    return any_product ["name"]
+sorted_products = sorted(products,key=sort_by_name)
 
-products = sorted(products, key=product_name)
 
-for p in products:
-   print(p["name"],(p["price"]))
+for p in sorted_products:
+    #price_usd = p["price"]
+    price_usd = "${0: .2f}".format(p["price"])
+    print("+ " + p["name"] + " (" + str (price_usd) + ")") 
