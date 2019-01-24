@@ -44,7 +44,7 @@ for p in sorted_products:
 
 
 
-    departments = []
+departments = []
 for p in products:
     #print(p["department"])
     departments.append(p["department"])
